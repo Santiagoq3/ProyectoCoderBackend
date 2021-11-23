@@ -18,8 +18,7 @@ router.get("/", async(req,res)=>{
     //     productos
     // })
     
-    res.render("Productos", {
-        style: "productos.css",
+    res.render("Productos.pug", {
         productos: productos
     })
     

@@ -1,9 +1,5 @@
 const express = require("express");
 const cors = require("cors")
-const {engine} = require("express-handlebars")
-// const path = require("path")
-
-
 
 class Server{
     constructor(){
@@ -14,13 +10,9 @@ class Server{
 
         this.middlewares()
         
-        this.app.engine('handlebars',engine({
-            defaultLayout: false,
-            layoutsDir: "views/layouts",
-            partialsDir: "views/partials"
-        }))
-        this.app.set('views','./views/layouts')
-        this.app.set('view engine','handlebars')
+       
+        this.app.set('views','./views')
+        this.app.set('view engine','ejs')
         
         
         this.productosPath= "/api/productos"
@@ -28,7 +20,7 @@ class Server{
         this.routes()
 
          this.app.get("/", (req,res)=>{
-             res.render("Formulario.handlebars")
+             res.render("formulario.ejs")
          })
     }
 

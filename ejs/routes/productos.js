@@ -18,7 +18,7 @@ router.get("/", async(req,res)=>{
     //     productos
     // })
     
-    res.render("Productos", {
+    res.render("Productos.ejs", {
         style: "productos.css",
         productos: productos
     })
